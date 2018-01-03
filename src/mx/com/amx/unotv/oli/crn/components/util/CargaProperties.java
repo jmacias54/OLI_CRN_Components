@@ -25,13 +25,17 @@ public class CargaProperties {
 			
 			props.load(new FileInputStream(new File(rutaProperties)));				
 			parametrosDTO.setAmbiente(ambiente);
-			parametrosDTO.setNombreSiteMap(props.getProperty("nombreSiteMap"));
-			parametrosDTO.setRutaLocal(props.getProperty("rutaLocal"));
-			parametrosDTO.setRutaArchivo(props.getProperty("rutaArchivo"));
-			parametrosDTO.setRutaShell(props.getProperty("rutaShell"));
-			parametrosDTO.setRutaWebServer(props.getProperty("rutaWebServer"));
 			parametrosDTO.setTamanioArchivo(props.getProperty("tamanioArchivo"));
 			parametrosDTO.setURL_WS_BASE(props.getProperty("URL_WS_BASE"));
+			
+			parametrosDTO.setNombrePanelHomeNoticias(props.getProperty("nombrePanelHomeNoticias"));
+			parametrosDTO.setNombrePanelHomeVideos(props.getProperty("nombrePanelHomeVideos"));
+			parametrosDTO.setNombrePanelMagazine(props.getProperty("nombrePanelMagazine"));
+			parametrosDTO.setNombrePanelMoreNews(props.getProperty("nombrePanelMoreNews"));
+			parametrosDTO.setNombrePanelNews(props.getProperty("nombrePanelNews"));
+			parametrosDTO.setNombrePanelTopNews(props.getProperty("nombrePanelTopNews"));
+			parametrosDTO.setRutaArchivos(props.getProperty("rutaArchivos"));
+			parametrosDTO.setRutaArchivosHome(props.getProperty("rutaArchivosHome"));
 			
 		} catch (Exception ex) {
 			parametrosDTO = new ParametrosDTO();

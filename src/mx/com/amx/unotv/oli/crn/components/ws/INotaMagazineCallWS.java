@@ -3,15 +3,20 @@
  */
 package mx.com.amx.unotv.oli.crn.components.ws;
 
+import java.util.List;
 import java.util.Properties;
-
 import org.apache.log4j.Logger;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
+import mx.com.amx.unotv.oli.crn.components.model.INotaMagazine;
+import mx.com.amx.unotv.oli.crn.components.response.INotaMagazineResponse;
+import mx.com.amx.unotv.oli.crn.components.util.Constants;
+import mx.com.amx.unotv.oli.crn.components.ws.exception.INotaMagazineCallWSException;
 
 /**
  * @author Jesus A. Macias Benitez
@@ -53,6 +58,37 @@ public class INotaMagazineCallWS{
 		}
 		String ambiente = props.getProperty("ambiente");
 		URL_WS_BASE = props.getProperty(ambiente + ".url.ws.base");
+	}
+	
+	
+	public List<INotaMagazine> findByIdMagazine( String idMagazine) throws INotaMagazineCallWSException{
+		logger.debug(" --- findByIdMagazine  [ INotaMagazineCallWS  ]  --- ");
+		logger.debug(" ---  IdMagazine : "+idMagazine+"  --- ");
+		
+		List<INotaMagazine> lista = null;
+		
+		String metodo = "/"+Constants.CONTROLLER_INOTA_MAGAZINE+"/"+Constants.METHOD_FIND_BY_IDMAGAZINE+"/" + idMagazine;
+		String URL_WS = URL_WS_BASE + metodo;
+		INotaMagazineResponse response = new INotaMagazineResponse();
+		
+		
+		try {
+			logger.debug("URL_WS: " + URL_WS);
+
+			restTemplate = new RestTemplate();
+			HttpEntity<String> entity = new HttpEntity<String>("Accept=application/json; charset=utf-8", headers);
+			response = restTemplate.postForObject(URL_WS, entity, INotaMagazineResponse.class);
+
+			lista = response.getLista();
+
+		} catch (Exception e) {
+			logger.error("Error findByIdMagazine [ INotaMagazineCallWS ]: ", e);
+			throw new INotaMagazineCallWSException(e.getMessage());
+		}
+		
+		
+		return lista ;
+		
 	}
 
 }
