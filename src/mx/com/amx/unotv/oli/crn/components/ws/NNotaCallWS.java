@@ -63,6 +63,36 @@ public class NNotaCallWS {
 	}
 
 	
+	public List<NNota> findByIdMagazine(String idMagazine) throws NNotaCallWSException {
+
+		logger.debug(" ---  findByIdMagazine [ NNotaCallWS ]---   ");
+		logger.debug(" ---  idMagazine: " + idMagazine + " ---   ");
+
+		String metodo = "/"+Constants.CONTROLLER_NNOTA+"/"+Constants.METHOD_FIND_BY_IDMAGAZINE+"/" + idMagazine;
+		String URL_WS = URL_WS_BASE + metodo;
+		List<NNota> lista = null;
+
+		NNotaResponse response = new NNotaResponse();
+
+		try {
+			logger.debug("URL_WS: " + URL_WS);
+
+			restTemplate = new RestTemplate();
+			HttpEntity<String> entity = new HttpEntity<String>("Accept=application/json; charset=utf-8", headers);
+			response = restTemplate.postForObject(URL_WS, entity, NNotaResponse.class);
+
+			lista = response.getLista();
+
+		} catch (Exception e) {
+			logger.error("Error findByIdMagazine [ NNotaCallWS ]: ", e);
+			throw new NNotaCallWSException(e.getMessage());
+		}
+
+		return lista;
+
+	}
+	
+	
 	public List<NNota> lastNotesNotInINotaMagazine(int limit) throws NNotaCallWSException {
 
 		logger.debug(" ---  getElementosNewsSiteMap [ NNotaCallWS ]---   ");
