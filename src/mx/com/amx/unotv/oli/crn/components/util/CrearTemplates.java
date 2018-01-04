@@ -52,7 +52,7 @@ public class CrearTemplates {
 
 			buffer_home_noticias = new StringBuffer();
 			TEMPLATE_HOME_NOTICIAS = new StringBuffer();
-			TEMPLATE_HOME_NOTICIAS.append("  <main class=\"main\" role=\"main\"> <section class=\"section-news\"> <h1>Noticias</h1> <div class=\"panel-news\">     $CONTENT_HOME_NOTICIAS$   </div><a class=\"btn-more\" href=\"#\" id=\"btn-more\">Cargar más</a>        </section> <aside class=\"sidebar\" role=\"complementary\"></aside> </main>");
+			TEMPLATE_HOME_NOTICIAS.append(Constants.TEMPLATE_HOME_NOTICIAS);
 			
 			logger.debug(" --- Contenido TEMPLATE_HOME_NOTICIAS --- ");
 			
@@ -72,7 +72,7 @@ public class CrearTemplates {
 				
 			} 
 			
-			PANEL_HOME_NOTICIAS = TEMPLATE_HOME_NOTICIAS.toString().replace(" $CONTENT_HOME_NOTICIAS$",
+			PANEL_HOME_NOTICIAS = TEMPLATE_HOME_NOTICIAS.toString().replace(Constants.CONSTANT_CONTENT_HOME_NOTICIAS,
 					buffer_home_noticias.toString());
 
 			/* si la carpeta se creo bien o ya esta creada */
@@ -102,7 +102,7 @@ public class CrearTemplates {
 			
 			buffer_home_videos = new StringBuffer();
 			TEMPLATE_HOME_VIDEOS = new StringBuffer();
-			TEMPLATE_HOME_VIDEOS.append(" <main class=\"main\" role=\"main\"> <section class=\"section-news\"> <h1>Videos</h1>  <div class=\"panel-news\"> $CONTENT_HOME_VIDEOS$  </div> </section> <aside class=\"sidebar\" role=\"complementary\"></aside> </main>");
+			TEMPLATE_HOME_VIDEOS.append(Constants.TEMPLATE_HOME_VIDEOS);
 			
 			
 			
@@ -124,7 +124,7 @@ public class CrearTemplates {
 				
 			}
 			
-			PANEL_HOME_VIDEOS = TEMPLATE_HOME_VIDEOS.toString().replace("$CONTENT_HOME_VIDEOS$",
+			PANEL_HOME_VIDEOS = TEMPLATE_HOME_VIDEOS.toString().replace(Constants.CONSTANT_CONTENT_HOME_VIDEOS,
 					buffer_home_videos.toString());
 
 	
@@ -158,8 +158,7 @@ public class CrearTemplates {
 			buffer_more_news = new StringBuffer();
 			buffer_more_news_fetured = new StringBuffer();
 			TEMPLATE_MORE_NEWS = new StringBuffer();
-			TEMPLATE_MORE_NEWS.append(
-					"  <section class=\"panel-more-news\"> <div> <div class=\"featured\"> $CONTENT_PANEL_MORE_NEWS_FETURED$ </div>  <div class=\"more\">  $CONTENT_PANEL_MORE_NEWS$ </div> </div>  <aside class=\"sidebar\" role=\"complementary\"></aside>   </section>");
+			TEMPLATE_MORE_NEWS.append(Constants.TEMPLATE_MORE_NEWS);
 
 			/* for para generar el contenido de TEMPLATE_PANEL_MAGAZINE */
 			logger.debug(" --- Contenido PANEL MORE NEWS  --- ");
@@ -196,8 +195,8 @@ public class CrearTemplates {
 			 * se agrega el contenido a cada plantilla por medio de su constante
 			 * correspondiente
 			 */
-			PANEL_MORE_NEWS = TEMPLATE_MORE_NEWS.toString().replace("$CONTENT_PANEL_MORE_NEWS_FETURED$",
-					buffer_more_news_fetured.toString()).replace("$CONTENT_PANEL_MORE_NEWS$", buffer_more_news.toString());
+			PANEL_MORE_NEWS = TEMPLATE_MORE_NEWS.toString().replace(Constants.CONSTANT_CONTENT_PANEL_MORE_NEWS_FETURED,
+					buffer_more_news_fetured.toString()).replace(Constants.CONSTANT_CONTENT_PANEL_MORE_NEWS, buffer_more_news.toString());
 
 			// PANEL_MORE_NEWS = PANEL_MORE_NEWS.replaceAll("$CONTENT_PANEL_MORE_NEWS$", buffer_more_news.toString());
 
@@ -229,7 +228,7 @@ public class CrearTemplates {
 
 			buffer_top_news = new StringBuffer();
 			TEMPLATE_TOP_NEWS = new StringBuffer();
-			TEMPLATE_TOP_NEWS.append(" <div class=\"panel-top-news\"> $CONTENT_PANEL_TOP_NEWS$  </div> ");
+			TEMPLATE_TOP_NEWS.append(Constants.TEMPLATE_TOP_NEWS);
 
 			/* for para generar el contenido de TEMPLATE_PANEL_MAGAZINE */
 			logger.debug(" --- Contenido PANEL TOP NEWS  --- ");
@@ -253,7 +252,7 @@ public class CrearTemplates {
 			 * se agrega el contenido a cada plantilla por medio de su constante
 			 * correspondiente
 			 */
-			PANEL_TOP_NEWS = TEMPLATE_TOP_NEWS.toString().replace("$CONTENT_PANEL_TOP_NEWS$",
+			PANEL_TOP_NEWS = TEMPLATE_TOP_NEWS.toString().replace(Constants.CONSTANT_CONTENT_PANEL_TOP_NEWS ,
 					buffer_top_news.toString());
 
 			/* si la carpeta se creo bien o ya esta creada */
@@ -289,9 +288,9 @@ public class CrearTemplates {
 			TEMPLATE_PANEL_MAGAZINE = new StringBuffer();
 			TEMPLATE_PANEL_NEWS = new StringBuffer();
 
-			TEMPLATE_PANEL_MAGAZINE.append(" <section class='panel-magazine'> $CONTENT_PANEL_MAGAZINE$  </section> ");
+			TEMPLATE_PANEL_MAGAZINE.append(Constants.TEMPLATE_PANEL_MAGAZINE);
 
-			TEMPLATE_PANEL_NEWS.append(" <div class=\"panel-news\"> $CONTENT_PANEL_NEWS$      </div> ");
+			TEMPLATE_PANEL_NEWS.append(Constants.TEMPLATE_PANEL_NEWS);
 
 			/* for para generar el contenido de TEMPLATE_PANEL_MAGAZINE */
 			logger.debug(" --- Contenido PANEL MAGAZINE --- ");
@@ -328,9 +327,9 @@ public class CrearTemplates {
 			 * se agrega el contenido a cada plantilla por medio de su constante
 			 * correspondiente
 			 */
-			PANEL_MAGAZINE = TEMPLATE_PANEL_MAGAZINE.toString().replace("$CONTENT_PANEL_MAGAZINE$",
+			PANEL_MAGAZINE = TEMPLATE_PANEL_MAGAZINE.toString().replace(Constants.CONSTANT_CONTENT_PANEL_MAGAZINE,
 					buffer_panel_magazine.toString());
-			PANEL_NEWS = TEMPLATE_PANEL_NEWS.toString().replace("$CONTENT_PANEL_NEWS$", buffer_panel_news.toString());
+			PANEL_NEWS = TEMPLATE_PANEL_NEWS.toString().replace(Constants.CONSTANT_CONTENT_PANEL_NEWS, buffer_panel_news.toString());
 
 			/* si la carpeta se creo bien o ya esta creada */
 			if (createFolders(parametros.getRutaArchivosHome())) {
