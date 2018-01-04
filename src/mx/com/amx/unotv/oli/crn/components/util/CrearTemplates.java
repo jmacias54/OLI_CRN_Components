@@ -197,9 +197,9 @@ public class CrearTemplates {
 			 * correspondiente
 			 */
 			PANEL_MORE_NEWS = TEMPLATE_MORE_NEWS.toString().replace("$CONTENT_PANEL_MORE_NEWS_FETURED$",
-					buffer_more_news_fetured.toString());
+					buffer_more_news_fetured.toString()).replace("$CONTENT_PANEL_MORE_NEWS$", buffer_more_news.toString());
 
-			PANEL_MORE_NEWS = PANEL_MORE_NEWS.replaceAll("$CONTENT_PANEL_MORE_NEWS$", buffer_more_news.toString());
+			// PANEL_MORE_NEWS = PANEL_MORE_NEWS.replaceAll("$CONTENT_PANEL_MORE_NEWS$", buffer_more_news.toString());
 
 			/* si la carpeta se creo bien o ya esta creada */
 			if (createFolders(parametros.getRutaArchivosHome())) {
