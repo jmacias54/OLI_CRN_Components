@@ -27,6 +27,8 @@
 	<!-- Business Object   -->
 	<bean id="generarComponentesBO " class="mx.com.amx.unotv.oli.crn.components.bo.GenerarComponentesBO"></bean> 
 	
+	<bean id="crearTemplates " class="mx.com.amx.unotv.oli.crn.components.util.CrearTemplates"></bean> 
+	
 
 
 
