@@ -66,7 +66,7 @@ public class CrearTemplates {
 				buffer_home_noticias.append(" 		<img src=\""+nota.getFcImagen()+"\"> ");
 				buffer_home_noticias.append(" 		<span class=\"date\">"+df.format(date)+"</span> ");
 				buffer_home_noticias.append("    </div> ");
-				buffer_home_noticias.append(" 	  <h3>"+nota.getFcTitulo()+"</h3> ");
+				buffer_home_noticias.append(" 	  <h3>"+ cambiaCaracteres( nota.getFcTitulo() )+"</h3> ");
 				buffer_home_noticias.append(" </a>");
 			
 				
@@ -119,7 +119,7 @@ public class CrearTemplates {
 				buffer_home_videos.append(" 		<img src=\""+nota.getFcImagen()+"\"> ");
 				buffer_home_videos.append(" 		<span class=\"date\">"+df.format(date)+"</span>");
 				buffer_home_videos.append(" 	</div>");
-				buffer_home_videos.append(" 	 <h3>"+nota.getFcTitulo()+"</h3>");
+				buffer_home_videos.append(" 	 <h3>"+ cambiaCaracteres( nota.getFcTitulo( ))+"</h3>");
 				buffer_home_videos.append("   </a>");
 				
 			}
@@ -175,7 +175,7 @@ public class CrearTemplates {
 			buffer_more_news_fetured.append(" 		<div class=\"thumb\"><img src=\"" + lista.get(0).getFcImagen()
 					+ "\"><span class=\"date\">" + df.format(fechaFeatured) + "</span>");
 			buffer_more_news_fetured.append(" 		</div>");
-			buffer_more_news_fetured.append(" 	<h3>" + lista.get(0).getFcTitulo() + "</h3>");
+			buffer_more_news_fetured.append(" 	<h3>" + cambiaCaracteres( lista.get(0).getFcTitulo() ) + "</h3>");
 			buffer_more_news_fetured.append(" </a> ");
 
 			for (int i = 1; i < lista.size(); i++) {
@@ -188,7 +188,7 @@ public class CrearTemplates {
 				buffer_more_news.append(" 		<img src=\"" + lista.get(i).getFcImagen() + "\"> ");
 				buffer_more_news.append(" 			<span class=\"date\">" + df.format(fecha) + "</span>");
 				buffer_more_news.append(" 	 </div>");
-				buffer_more_news.append(" 	  <h3>" + lista.get(i).getFcTitulo() + "</h3> ");
+				buffer_more_news.append(" 	  <h3>" + cambiaCaracteres( lista.get(i).getFcTitulo() )+ "</h3> ");
 				buffer_more_news.append(" </a> ");
 			}
 
@@ -244,7 +244,7 @@ public class CrearTemplates {
 				buffer_top_news.append(" <div class=\"thumb\"><img src=\"" + nota.getFcImagen()
 						+ "\"><span class=\"date\">" + df.format(fecha) + "</span>");
 				buffer_top_news.append(" </div>");
-				buffer_top_news.append("	 <h3>" + nota.getFcTitulo() + "</h3> ");
+				buffer_top_news.append("	 <h3>" + cambiaCaracteres( nota.getFcTitulo() )+ "</h3> ");
 				buffer_top_news.append(" </a>");
 
 			}
@@ -301,9 +301,9 @@ public class CrearTemplates {
 				buffer_panel_magazine
 						.append(" <a class=\"item-magazine\" href=\"" + lista.get(i).getFcFriendlyUrl() + "\"> ");
 				buffer_panel_magazine.append("  <img src=\" " + lista.get(i).getFcImagen() + " \"> ");
-				buffer_panel_magazine.append(" 	<div><span class=\"tag\">" + lista.get(i).getFcTitulo() + "</span> ");
+				buffer_panel_magazine.append(" 	<div><span class=\"tag\">" + cambiaCaracteres( lista.get(i).getFcTitulo() ) + "</span> ");
 				buffer_panel_magazine.append(" 	  <div class=\"item-info\"><span class=\"category\"></span>");
-				buffer_panel_magazine.append("          <h2> " + lista.get(i).getFcDescripcion() + "</h2>");
+				buffer_panel_magazine.append("          <h2> " + cambiaCaracteres( lista.get(i).getFcDescripcion() ) + "</h2>");
 				buffer_panel_magazine.append("   </div></div>");
 				buffer_panel_magazine.append(" </a> ");
 
@@ -320,7 +320,7 @@ public class CrearTemplates {
 				buffer_panel_news.append(" <a class=\"item-news\" href=\"" + lista.get(j) + "\"> ");
 				buffer_panel_news.append("   <div class=\"thumb\"><img src=\"" + lista.get(j).getFcImagen() + "\"> ");
 				buffer_panel_news.append("		<span class=\\\"date\\\">" + df.format(fecha) + "</span> </div>");
-				buffer_panel_news.append("			<h3>" + lista.get(j).getFcTitulo() + "</h3>");
+				buffer_panel_news.append("			<h3>" + cambiaCaracteres(lista.get(j).getFcTitulo()) + "</h3>");
 				buffer_panel_news.append(" </a>");
 			}
 
@@ -398,4 +398,49 @@ public class CrearTemplates {
 		return success;
 	}
 
+	
+	/**
+	  * Clase para la codificacion de Caracteres
+	  * @param String, Texto a codificar
+	  * @return String, Texto codificado
+	  * */
+	private	static  String cambiaCaracteres(String texto) {
+			texto = texto.replaceAll("á", "&#225;");
+	        texto = texto.replaceAll("é", "&#233;");
+	        texto = texto.replaceAll("í", "&#237;");
+	        texto = texto.replaceAll("ó", "&#243;");
+	        texto = texto.replaceAll("ú", "&#250;");  
+	        texto = texto.replaceAll("Á", "&#193;");
+	        texto = texto.replaceAll("É", "&#201;");
+	        texto = texto.replaceAll("Í", "&#205;");
+	        texto = texto.replaceAll("Ó", "&#211;");
+	        texto = texto.replaceAll("Ú", "&#218;");
+	        texto = texto.replaceAll("Ñ", "&#209;");
+	        texto = texto.replaceAll("ñ", "&#241;");        
+	        texto = texto.replaceAll("ª", "&#170;");          
+	        texto = texto.replaceAll("ä", "&#228;");
+	        texto = texto.replaceAll("ë", "&#235;");
+	        texto = texto.replaceAll("ï", "&#239;");
+	        texto = texto.replaceAll("ö", "&#246;");
+	        texto = texto.replaceAll("ü", "&#252;");    
+	        texto = texto.replaceAll("Ä", "&#196;");
+	        texto = texto.replaceAll("Ë", "&#203;");
+	        texto = texto.replaceAll("Ï", "&#207;");
+	        texto = texto.replaceAll("Ö", "&#214;");
+	        texto = texto.replaceAll("Ü", "&#220;");
+	        texto = texto.replaceAll("¿", "&#191;");
+	        texto = texto.replaceAll("“", "&#8220;");        
+	        texto = texto.replaceAll("”", "&#8221;");
+	        texto = texto.replaceAll("‘", "&#8216;");
+	        texto = texto.replaceAll("’", "&#8217;");
+	        texto = texto.replaceAll("…", "...");
+	        texto = texto.replaceAll("¡", "&#161;");
+	        texto = texto.replaceAll("¿", "&#191;");
+	        texto = texto.replaceAll("°", "&#176;");
+	        
+	        texto = texto.replaceAll("–", "&#8211;");
+	        texto = texto.replaceAll("—", "&#8212;");
+	        //texto = texto.replaceAll("\"", "&#34;");
+			return texto;
+		}
 }
