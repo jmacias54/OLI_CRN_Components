@@ -43,27 +43,48 @@ public class GenerarComponentesBO {
 			
 			logger.debug(" --- listaHome ---- ");
 			listaHome = nNotaCallWS.findByIdMagazine(Constants.MAGAZINE_HOME);
-			crearTemplates.creaMagazineHome(listaHome);
+			
+			
+				logger.debug(" --- creaMagazineHome ---- ");
+				crearTemplates.creaMagazineHome(listaHome);
+			
+			
 			
 			
 			logger.debug(" --- listaPanel ---- ");
 			listaPanel = nNotaCallWS.findByIdMagazine(Constants.MAGAZINE_PANEL);
-			crearTemplates.creaTopNews(listaPanel);
+			
+				logger.debug(" --- creaTopNews ---- ");
+				crearTemplates.creaTopNews(listaPanel);
+		
+			
 			
 			logger.debug(" --- Las últiams 4 notas quitando las que estén en el magazine-home y magazine panel.  ---- ");
 			listaLastNotesNotInINotaMagazine = nNotaCallWS.lastNotesNotInINotaMagazine(Constants.LIMIT_4);
-			crearTemplates.creaMoreNews(listaLastNotesNotInINotaMagazine);
+			
+				logger.debug(" --- creaMoreNews ---- ");
+				crearTemplates.creaMoreNews(listaLastNotesNotInINotaMagazine);
+			
+			
 			
 			
 			/* oli_mx_n_nota que id_categoria = noticias 50 notas más recientes */
 			logger.debug(" --- id_categoria = noticias 50 notas más recientes ---- ");
 			listaNoticias = nNotaCallWS.lastNotesFindByIdCategoriaLimit(Constants.CATEGORIA_NOTICIAS, Constants.LIMIT_50);
-			crearTemplates.creaHomeNoticias(listaNoticias);
+		
+				logger.debug(" --- creaHomeNoticias ---- ");
+				crearTemplates.creaHomeNoticias(listaNoticias);
+			
+			
 			
 			
 			logger.debug(" --- id_categoria = videos 50 notas más recientes---- ");
 			listaVideos = nNotaCallWS.lastNotesFindByIdCategoriaLimit(Constants.CATEGORIA_VIDEOS, Constants.LIMIT_50);
-			crearTemplates.creaHomeVideo(listaVideos);
+		
+				logger.debug(" --- creaHomeVideo ---- ");
+				crearTemplates.creaHomeVideo(listaVideos);
+		
+			
 			
 
 		} catch (Exception e) {

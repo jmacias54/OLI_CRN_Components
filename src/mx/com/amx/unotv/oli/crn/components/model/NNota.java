@@ -51,9 +51,28 @@ public class NNota implements Serializable {
 	private String fdFechaPublicacion;
 
 	private String fiBanOtros;
+	
+	private String fcLiveVod;
 
+	private String fcUrlExterna;
+	
+	
 	public NNota() {
 	}
+	
+	
+
+	public String getFcUrlExterna() {
+		return fcUrlExterna;
+	}
+
+
+
+	public void setFcUrlExterna(String fcUrlExterna) {
+		this.fcUrlExterna = fcUrlExterna;
+	}
+
+
 
 	public String getFcIdContenido() {
 		return this.fcIdContenido;
@@ -214,5 +233,14 @@ public class NNota implements Serializable {
 	public void setFiBanOtros(String fiBanOtros) {
 		this.fiBanOtros = fiBanOtros;
 	}
+
+	public String getFcLiveVod() {
+		return fcLiveVod;
+	}
+
+	public void setFcLiveVod(String fcLiveVod) {
+		this.fcLiveVod = fcLiveVod;
+	}
+	
 
 }

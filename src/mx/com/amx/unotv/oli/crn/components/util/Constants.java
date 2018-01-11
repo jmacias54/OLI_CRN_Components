@@ -12,6 +12,13 @@ public final class Constants {
 	private Constants() {
 		// restrict instantiation
 	}
+	
+	
+	public static final String BASE_URL_POR_CATEGORIA = "pyeongchang/$CATEGORIA$/detalle/";
+	public static final String CONSTANT_CATEGORIA= "$CATEGORIA$";
+
+	
+	
 
 	public static final String URL_DEV = "http://dev-unotv.tmx-internacional.net/";
 	public static final String URL_PROD = "https://www.unotv.com/";
@@ -29,6 +36,11 @@ public final class Constants {
 	public static final String CATEGORIA_ATLETAS = "atletas";
 	public static final String CATEGORIA_VIDEOS = "videos";
 	
+	
+	public static final String TIPO_NOTA_GALERIA = "galeria";
+	public static final String TIPO_NOTA_IMAGEN = "imagen";
+	public static final String TIPO_NOTA_VIDEO = "video";
+
 	public static final int LIMIT_4 = 4;
 	public static final int LIMIT_50 = 50;
 	
@@ -42,28 +54,38 @@ public final class Constants {
 	public static final String METHOD_FIND_BY_IDMAGAZINE ="findByIdMagazine";
 	
 	
+	
+	public static final String TYPE_TEMPLATE_PANEL_MAGAZINE = "panel-magazine";
+	public static final String TYPE_TEMPLATE_PANEL_NEWS = "panel-news";
+	public static final String TYPE_TEMPLATE_PANEL_TOP_NEWS= "panel-top-news";
+	public static final String TYPE_TEMPLATE_PANEL_MORE_NEWS = "panel-more-news";
+	public static final String TYPE_TEMPLATE_PANEL_HOME_NOTICIAS = "home-noticias";
+	public static final String TYPE_TEMPLATE_PANEL_HOME_VIDEOS = "home-videos";
+	
+	
+	
 	/* plantillas y constantes de contenido de cada plantilla */
 	
 	public static final String TEMPLATE_PANEL_MAGAZINE = " <section class='panel-magazine'> $CONTENT_PANEL_MAGAZINE$  </section>  ";
-	public static final String TEMPLATE_PANEL_NEWS = " <div class=\\\"panel-news\\\"> $CONTENT_PANEL_NEWS$      </div>  ";
+	public static final String TEMPLATE_PANEL_NEWS = " <div class='panel-news'> $CONTENT_PANEL_NEWS$      </div>  ";
 	
 	public static final String  CONSTANT_CONTENT_PANEL_MAGAZINE = "$CONTENT_PANEL_MAGAZINE$";
 	public static final String  CONSTANT_CONTENT_PANEL_NEWS = "$CONTENT_PANEL_NEWS$";
 	
 	
-	public static final String TEMPLATE_TOP_NEWS = " <div class=\\\"panel-top-news\\\"> $CONTENT_PANEL_TOP_NEWS$  </div>  ";
+	public static final String TEMPLATE_TOP_NEWS = " <div class='panel-top-news'> $CONTENT_PANEL_TOP_NEWS$  </div>  ";
 	public static final String  CONSTANT_CONTENT_PANEL_TOP_NEWS = "$CONTENT_PANEL_TOP_NEWS$";
 	
 	
-	public static final String TEMPLATE_MORE_NEWS = "  <section class=\\\"panel-more-news\\\"> <div> <div class=\\\"featured\\\"> $CONTENT_PANEL_MORE_NEWS_FETURED$ </div>  <div class=\\\"more\\\">  $CONTENT_PANEL_MORE_NEWS$ </div> </div>  <aside class=\\\"sidebar\\\" role=\\\"complementary\\\"></aside>   </section> " ;
+	public static final String TEMPLATE_MORE_NEWS = "  <section class='panel-more-news'> <div> <div class='featured'> $CONTENT_PANEL_MORE_NEWS_FETURED$ </div>  <div class='more'>  $CONTENT_PANEL_MORE_NEWS$ </div> </div>  <aside class='sidebar' role='complementary'></aside>   </section> " ;
 	public static final String CONSTANT_CONTENT_PANEL_MORE_NEWS_FETURED = "$CONTENT_PANEL_MORE_NEWS_FETURED$";
 	public static final String CONSTANT_CONTENT_PANEL_MORE_NEWS = "$CONTENT_PANEL_MORE_NEWS$";
 	
-	public static final String  TEMPLATE_HOME_VIDEOS = " <main class=\\\"main\\\" role=\\\"main\\\"> <section class=\\\"section-news\\\"> <h1>Videos</h1>  <div class=\\\"panel-news\\\"> $CONTENT_HOME_VIDEOS$  </div> </section> <aside class=\\\"sidebar\\\" role=\\\"complementary\\\"></aside> </main> ";
+	public static final String  TEMPLATE_HOME_VIDEOS = " <main class='main' role='main'> <section class='section-news'> <h1>Videos</h1>  <div class='panel-news'> $CONTENT_HOME_VIDEOS$  </div> </section> <aside class='sidebar' role='complementary'></aside> </main> ";
 	public static final String CONSTANT_CONTENT_HOME_VIDEOS = "$CONTENT_HOME_VIDEOS$";
 	
 	
 	
-	public static final String  TEMPLATE_HOME_NOTICIAS = " <main class=\\\"main\\\" role=\\\"main\\\"> <section class=\\\"section-news\\\"> <h1>Noticias</h1> <div class=\\\"panel-news\\\">     $CONTENT_HOME_NOTICIAS$   </div><a class=\\\"btn-more\\\" href=\\\"#\\\" id=\\\"btn-more\\\">Cargar más</a>        </section> <aside class=\\\"sidebar\\\" role=\\\"complementary\\\"></aside> </main> ";
+	public static final String  TEMPLATE_HOME_NOTICIAS = " <main class='main' role='main'> <section class='section-news'> <h1>Noticias</h1> <div class='panel-news'>     $CONTENT_HOME_NOTICIAS$   </div><a class='btn-more' href=\\\"#\\\" id='btn-more'>Cargar más</a>        </section> <aside class='sidebar' role='complementary'></aside> </main> ";
 	public static final String CONSTANT_CONTENT_HOME_NOTICIAS ="$CONTENT_HOME_NOTICIAS$";
 }
